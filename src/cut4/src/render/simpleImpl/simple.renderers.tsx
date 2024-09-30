@@ -53,7 +53,7 @@ export const renderDropDown = (options: string[]): FieldRenderer => <T, >(
             value={value[id] as string}
             onChange={onChange}
         >
-            <option value="">Select {id as string}</option>
+            <option value="">Select value</option>
             {options.map((option, index) => (
                 <option key={index} value={option}>
                     {option}

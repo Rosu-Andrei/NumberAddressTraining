@@ -6,6 +6,7 @@ import {AddressForm} from "./components/AddressForm";
 import {GenericNameForm} from "./components/GenericForm";
 import {DragonForm} from "./components/DragonForm";
 import {DragonFormWithLens} from "./render/withLenses/dragon.form";
+import {DragonFormWithArray} from "./render/withLenses/withArray/dragon.array.form";
 
 const country = window.location.search.split('=')[1] as Country;
 if (country && !isCountry(country))
@@ -20,7 +21,8 @@ function App() {
             </CountryProvider>*/}
             {/*<GenericNameForm/>*/}
             {/*<DragonForm/>*/}
-            <DragonFormWithLens/>
+            {/*<DragonFormWithLens/>*/}
+            <DragonFormWithArray/>
         </div>
     );
 }

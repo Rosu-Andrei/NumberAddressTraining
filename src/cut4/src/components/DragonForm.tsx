@@ -13,8 +13,6 @@ const stomachLens = chestLens.focusOn("stomach");
 const leftEyeLens = dragonLens.focusOn("head").focusOn("leftEye");
 const rightEyeLens = dragonLens.focusOn("head").focusOn("rightEye");
 
-
-// Render the DragonForm with nested Claws inputs.
 export const DragonForm = () => {
     return renderGenericObject(dragonProp);
 };

@@ -27,6 +27,18 @@ export function child<Main, T, K extends keyof T>(lens: LensAndPath<Main, T>, ke
     };
 }
 
+/**
+ * we parse the left side of the values of the array, and it returns a lens that specifically point to that property
+ */
+export function parseLens<Main, Child>(s: string): LensAndPath<Main, Child> {
+    const path = s.split('.');
+    let builder = new LensBuilder<Main, any>(identityLens());
+    for (const key of path) {
+        builder = builder.focusOn(key);
+    }
+    return builder.build();
+}
+
 // LensBuilder class for easier lens creation and focus chaining
 export class LensBuilder<Main, Child> {
     private _lens: LensAndPath<Main, Child>;
